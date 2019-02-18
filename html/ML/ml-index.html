@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        *{
+            padding:0;
+            margin:0;
+
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .header{
+            position:fixed;
+            top:0;
+            left:0;
+            height:76px;
+            width:100%;
+            background-color: #fdfcfc;
+            z-index: 999;
+        }
+        .header .header-c{
+            position:relative;
+            height:100%;
+            width:1200px;
+            margin:0 auto;
+            /*overflow:hidden;*/
+        }
+        .header .header-c .logo{
+            display:block;
+            float:left;
+            width:48px;
+            height:48px;
+            margin:15px 60px ;
+            background:#fff url(img/logo.jpg) no-repeat center;
+        }
+        .header .header-c .logo-text{
+            display:block;
+            float:left;
+            font-size: 30px;
+            font-weight: bold;
+            color:#666666;
+            margin:17px 0 ;
+        }
+        .header .header-c .nav{
+            position:absolute;
+            top:30px;
+            right:0px;
+            height:100%;
+        }
+        .header .header-c .nav li{
+            float:left;
+            height:100%;
+            width:80px;
+            margin-left: 24px;
+        }
+        .header .header-c .nav li a{
+            display:block;
+            height:25px;
+            text-align: center;
+            margin-top: 4px;
+            /*border-bottom: 1px solid #50e3f1;
+            color:#818181;*/
+        }
+        .header .header-c .nav li a:hover{
+            border-bottom: 1px solid #50e3f1;
+            color:#50e3f1;
+        }
+        .header .header-c .nav .about-item .sub-items{
+            width:100px;
+            height:50px;
+            background-color:rgba(255, 255, 255, 0.3);
+            display:none;
+            
+
+        }
+        .header .header-c .nav .about-item .sub-items a{
+            display:block;
+            width:100%;
+            height:20px;
+            font-size: 13px;
+            line-height: 20px;
+        }
+        .header .header-c .nav .about-item:hover .sub-items{
+             display:block;
+        }
+        .header .header-c .nav .about-item:hover .sub-items a{
+             border-bottom: none;
+        }
+
+
+
+
+        .banner{
+            position:relative;
+
+            height:624px;
+            width:100%;
+            background:#fff url(img/bj.jpg) no-repeat center;
+
+        }
+        .banner .banner-c{
+            position:relative;
+            width:1200px;
+            height:100%;
+            margin:0 auto;
+        }
+        .banner .banner-c .dotts{
+            position:absolute;
+            left:548px;
+            bottom:32px;
+            height:20px;
+            width:94px;
+        }
+        .banner .banner-c .dotts li{
+            float:left;
+            margin-left: 10px;
+            border:2px solid #fff;
+            width:10px;
+            height:10px;
+            border-radius:50%;
+        }
+        .container{
+            height:1200px;
+            width:100%;
+
+        }
+        .container .container-c{
+            width:1200px;
+            height:100%;
+            margin:0 auto;
+        }
+        .container .container-c .par{
+            width:1200px;
+            height:967px;
+            margin:0 auto;
+        }
+        .air{
+            height:80px;
+            width:100%;
+        }
+         .common-title{
+            position:relative;
+            width:100%;
+            height:48px;
+        }
+        .common-title .dott{
+            display:block;
+            position:absolute;
+            top:10px;
+            left:-25px;
+            background-color: #04e4f8;
+            width:50px;
+            height:16px;
+        }
+        .common-title .cname{
+            position:absolute;
+            top:0px;
+            font-size: 18px;
+            font-weight: bold;
+            color:#3b3b3b;
+
+        }
+        .common-title .ename{
+            position:absolute;
+            top:24px;
+            font-size: 14px;
+            color:#3b3b3b;
+
+        }
+        .container .container-c .par-tu{
+            margin-top: 20px;
+            width:100%;
+        }
+        .container .container-c .par-tu .par-min{
+            height:275px;
+            width:100%;
+        }
+        .container .container-c .par-tu .par-min img{
+            display:block;
+            float:left;
+        }
+        .container .container-c .par-tu .par-min ul{
+            float:left;
+            width:819px;
+            margin:63px 0;
+            background-color: #fbfbfb;
+        }
+        .container .container-c .par-tu .par-min ul li{
+            text-align: center;
+            line-height: 40px;
+        }
+        .container .container-c .par-tu .mon{
+            font-size: 23px;
+            color:#404040;
+            font-weight: bold;
+        }
+        .container .container-c .par-tu .fla{
+            font-size: 15px;
+            color:#404040;
+        }
+        .container .container-c .par-tu .sea{
+            padding-left: 170px;
+        }
+        .container .container-c .par-tu .sea .col{
+            float:left;
+            display:block;
+            width:8px;
+            height:8px;
+            background-color: yellow;
+            margin:14px auto;
+            transform: rotate(45deg);
+            
+        }
+        .container .container-c .par-tu .sea .text{
+            float:left;
+            display:block;
+            font-size: 15px;
+            width:75px;
+            height:20px;
+            margin-bottom: 20px;
+            color:#404040;
+        }
+        .more a{
+            display:block;
+            height:70px;
+            margin:70px 400px;
+            border:2px solid #f2f2f2;
+            text-align: center;
+            line-height: 70px;
+            font-size: 15px;
+            color:#8a8989;
+
+        }
+        .more:hover a{
+            background-color: #fbfbfb;
+            border:none;
+            /*color:#fff;*/
+        }
+        .about{
+            height:297px;
+            width:100%;
+            background-color: #fbfbfb;
+            background: url(img/about.jpg) no-repeat center;
+            
+        }
+        .about .about-c{
+            position:relative;
+            height:297px;
+            width:1200px;
+            margin:0 auto;
+           
+        }
+        
+        .about .about-c .about-right{
+            position:absolute;
+            top:70px;
+            right:70px;
+            width:500px;
+            height:170px;
+           
+                 
+        }
+        .about .about-c .about-right ul{
+            position:relative;
+            width:480px;
+            height:40px;
+
+        }
+        .about .about-c .about-right .about-r li{
+            line-height: 27px;
+        }
+        .about .about-c .about-right .pro-1{
+            font-size: 20px;
+            font-weight: bold;
+            color:#373737;
+        }
+        .about .about-c .about-right .pro-2{
+            font-size: 18px;
+            color:#373737;
+            
+        }
+        .about .about-c .about-right .pro-3{
+            position:absolute;
+            font-size: 15px;
+            color:#373737;
+            top:0px;
+            left:130px;
+            width:426px;
+            height:50px;
+            border-left: 2px solid #5e5e5e;
+            padding-left: 20px;
+        }
+        .about .about-c .about-right .about-r.about-t{
+            margin-top: 70px;
+        }
+        .road{
+            height:840px;
+            width:100%;
+        }
+        .road .road-c{
+            width:1200px;
+            height:100%;
+            margin:0 auto;
+        }
+        .road .road-c .road-t{
+            width:100%;
+            height:500px;
+            background-color: #fbfbfb;
+            overflow:hidden;
+        }
+        .road .road-c .road-s .road-d{
+            float:left;
+            display: block;
+            line-height: 250px;
+            text-align: center;
+            width:400px;
+            height:250px;
+            font-size: 20px;
+            color:#919191;
+            font-weight: bold;
+        }
+        .road .road-c .road-s .road-d .ghos{
+            position:relative;
+            display: block;
+            width:400px;
+            height:250px;
+            background-color: rgba(0, 0, 0, 0.3);
+            display:none;
+        }
+        .road .road-c .road-s .road-d .ghos span{
+            display: block;
+            position:absolute;
+            left:26px;
+            top:22px;
+            width:344px;
+            height:200px;
+            border: 2px solid #04e4f8;
+            display:none;
+        }
+        .road .road-c .road-s .road-d:hover .ghos{
+            display:block;
+        }
+        .road .road-c .road-s .road-d:hover .ghos span{
+            display:block;
+        }
+
+
+        .road .road-c .road-s .road-d.b{
+        background: #fff url(img/c-1.jpg) no-repeat center;
+        }
+        .road .road-c .road-s .road-d.e{
+        background: #fff url(img/z-2.jpg) no-repeat center;
+        }
+        .road .road-c .road-s .road-d.g{
+        background: #fff url(img/r-1.jpg) no-repeat center;
+        }
+        
+        .cust{
+            height:338px;
+            background:#fff url(img/sea.gif) no-repeat center;
+        }
+        .cust .cust-c{
+            width:1200px;
+            height:100%;
+            margin:0 auto;
+
+        }
+        .cust .cust-c .cust-text{
+            float:left;
+            height:100%;
+            width:50%;
+            margin-top:45px;
+        }
+        .cust .cust-c .cust-text li{
+            color:#bdbaba;
+            text-align: center;
+            line-height: 40px;
+
+        }
+        .cust .cust-c .cust-text .cust-d{
+            display:block;
+            font-weight: bold;
+            height:40px;
+            width:150px;
+            font-size: 20px;
+            color:#f1f2f3;
+            margin-bottom: 10px;
+            margin-left: 230px;
+            border:1px solid #a5a5a9;
+        }
+        .cust .cust-c .cust-text .cust-d:hover{
+            border:none;
+            color:#f1f2f3;
+            background-color: #04e4f8;
+        }
+       /* .cust .cust-c .cust-text .cust-d.cust-top{
+            background-color: #04e4f8;
+        }*/
+        .cust .cust-c .cust-text .cust-l{
+            font-size: 24px;
+        }
+        .cust .cust-c .cust-text .cust-j{
+            font-size: 13px;
+        }
+        .cust .cust-c .cust-text .cust-g{
+            font-size: 30px;
+        }
+        .cust .cust-c .cust-text .cust-y{
+            font-size: 24px;
+            color:#04e4f8;
+            margin-bottom: 50px;
+        }
+        .footer{
+            height:500px;
+        }
+        .footer .footer-c{
+            width:1200px;
+            height:100%;
+            margin:0 auto;
+
+        }
+        .footer .footer-c .connect{
+            position:relative;
+            height:400px;
+            margin-top: 70px;
+
+        }
+        .footer .footer-c .connect .connect-left{
+           position:relative;
+            width:420px;
+            height:400px;
+        }
+        .footer .footer-c .connect .connect-left li{
+            font-size: 15px;
+            color:#5d5d5d;
+            line-height: 35px;
+        }
+        .footer .footer-c .connect .connect-left .big{
+            font-size: 20px;
+            color:#5d5d5d;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .footer .footer-c .connect .connect-left .photo{
+            height:20px;
+            width:100%;
+            overflow:hidden;
+        }
+        .footer .footer-c .connect .connect-left .photo a{
+            display:block;
+            float:left;
+            height:20px;
+            width:20px;
+            margin-right: 20px;
+           
+        }
+        .footer .photo .photo-1{
+            background:#fff url(img/qq.png) no-repeat center;
+        }
+        .footer .photo .photo-2{
+            background:#fff url(img/wx.png) no-repeat center;
+        }
+        .footer .photo .photo-3{
+            background:#fff url(img/wb.png) no-repeat center;
+        }
+        .footer .photo .bot{
+            position:absolute;
+            bottom:0;
+            left:0;
+        }
+        .footer .footer-c .connect .sub{
+            position:absolute;
+            top:0;
+            right:0;
+            width:600px;
+            height:380px;
+        }
+        .footer .footer-c .connect .sub .input-item{
+            position:relative;
+            width:140px;
+            height:70px;
+            float:left;
+            margin-top: 30px;
+            margin-right: 30px;
+            border-bottom: 1px solid #b9bcbc;
+        }
+        .footer .footer-c .connect .sub .input-item span{
+            font-size: 17px;
+            color: #b9bcbc;
+        }
+        .footer .footer-c .connect .sub .input-item input{
+                position:absolute;
+                bottom:0;
+                left:0;
+                width:100px;
+                height:30px;
+                text-indent: 20px;
+                border:none;
+                outline:none;
+            }
+            .footer .footer-c .connect .sub .input-item.input-con{
+                height:70px;
+                width:480px;
+            }
+            .footer .input-con .con{
+                width:480px;
+                height:30px;
+            }
+            .footer .footer-c .connect .sub .btn{
+                display:block;
+                position: absolute;
+                top:210px;
+                left:0;
+                width:60px;
+                height:24px;
+                background-color: #474646;
+                color:#e0e0e0;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+    <div class="header">
+         <!-- 版心 -->
+        <div class="header-c">
+        <a href="#" class="logo">      
+        </a>
+        <span class="logo-text">慢旅</span>
+        <ul class="nav">
+            <li class="about-item">
+            <a href="#">首页</a>
+                <div class="sub-items">
+                    <a href="#">在线咨询</a>
+                    <a href="#">留言板块</a>
+                </div>
+            </li>
+            <li class=""><a href="#">特别策划</a></li>
+            <li class=""><a href="#">精品路线</a></li>
+            <li class=""><a href="#">关于我们</a></li>
+            <li class=""><a href="#">联系我们</a></li>
+        </ul>
+            
+        </div>
+    </div>
+    <div class="banner">
+        <div class="banner-c">
+            <ul class="dotts">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+        
+    </div>
+    <div class="container">
+        <div class="container-c">
+        <div class="air"></div>
+            <div class="par">
+                <div class="common-title">
+                    <div class="dott">
+                        <span></span>
+                    </div>
+                    <p class="cname">特别策划</p>
+                    <p class="ename">ACTIVITY ROUTR</p>
+                </div>
+                <div class="par-tu">
+                    <div class="par-min pat-min1">
+                        <img src="img/high.jpg" height="273" width="381" alt="" />
+                        <ul>
+                            <li class="mon">苍山洱海旁，过一段慢时光</li>
+                            <li class="fla">云南风花雪月之旅 （6days）</li>
+                            <li class="sea"><span class="col"></span>
+                                            <span class="text">洱海骑行</span>
+                                            <span class="col"></span>
+                                            <span class="text">手作扎染</span>
+                                            <span class="col"></span>
+                                            <span class="text">泸沽湖划船</span>
+                                            <span class="col"></span>
+                                            <span class="text">草海</span>
+                                            <span class="col"></span>
+                                            <span class="text">束河古镇</span>
+                                            <span class="col"></span>
+                                            <span class="text">拉市海</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="par-min pat-min1">
+                        <ul>
+                            <li class="mon">苍近距离看“滚滚”花式卖萌</li>
+                            <li class="fla">成都City  Walk之旅 （6days）</li>
+                            <li class="sea"><span class="col"></span>
+                                            <span class="text">熊猫基地</span>
+                                            <span class="col"></span>
+                                            <span class="text">宽窄巷子</span>
+                                            <span class="col"></span>
+                                            <span class="text">武侯祠</span>
+                                            <span class="col"></span>
+                                            <span class="text">小酒馆</span>
+                                            <span class="col"></span>
+                                            <span class="text">吃货天堂</span>
+                                            <span class="col"></span>
+                                            <span class="text">锦里</span>
+                            </li>
+                        </ul>
+                        <img src="img/center.jpg" height="273" width="381" alt="" />
+                    </div>
+                    <div class="par-min pat-min1">
+                        <img src="img/under.jpg" height="273" width="381" alt="" />
+                        <ul>
+                            <li class="mon">骑行青海湖，行摄纯净天空之境</li>
+                            <li class="fla">梦回大西北之旅 （6days）</li>
+                            <li class="sea"><span class="col"></span>
+                                            <span class="text">茶卡盐湖 </span>
+                                            <span class="col"></span>
+                                            <span class="text"> U型天路</span>
+                                            <span class="col"></span>
+                                            <span class="text">青海湖日出</span>
+                                            <span class="col"></span>
+                                            <span class="text">魔鬼城</span>
+                                            <span class="col"></span>
+                                            <span class="text">七彩丹霞</span>
+                                            <span class="col"></span>
+                                            <span class="text">莫高窟</span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div class="more">
+                    <a href="">MORE</a>
+                    
+                </div>
+            </div>
+            <div class="air"></div>
+            <div class="air"></div>
+            
+        </div>
+    </div>
+    <div class="about">
+        <div class="about-c">
+            <div class="common-title">
+                    <div class="dott">
+                        <span></span>
+                    </div>
+                    <p class="cname" style="color:#fff;">关于我们</p>
+                    <p class="ename" style="color:#838080;">ABOUT  US</p>
+            </div>
+
+            <div class="about-right">
+            <ul class="about-r">
+                <li class="pro-1">介绍</li>
+                <li class="pro-2">Introduce</li>
+                <li class="pro-3">  新旅行概念社区，在这里，你可以收货来自世界各地的友谊，为您
+                提供省心、省钱、纯玩、有趣的路线随时带您出发看世界。
+                </li>
+            </ul>
+            <ul class="about-r about-t">
+                <li class="pro-1">理念</li>
+                <li class="pro-2">Concept</li>
+                <li class="pro-3">  每一寸土地都承载着一个城市厚重而亲切的灵魂。
+                            About travel, about life, That's all.
+                </li>
+            </ul>
+            </div>
+        </div>  
+     </div>
+     <div class="road">
+         <div class="road-c">
+            <div class="air"></div>
+              <div class="common-title">
+                    <div class="dott">
+                        <span></span>
+                    </div>
+                    <p class="cname">精品路线</p>
+                    <p class="ename">CLASSICS ROUTR</p>
+                </div>
+                <div class="road-t">
+                    <ul class="road-s">
+                        <li class="road-d a"><a href="#"></a>
+                           <span> 西北精环线自驾游 
+                            </span>
+                        </li>
+                        <li class="road-d b"><a href="#" class="ghos"><span></span></a></li>
+                        <li class="road-d c"><a href="#"></a>
+                            <span>京都岚山深度一日游
+                            </span>
+                        </li>
+                        <li class="road-d e"><a href="#" class="ghos"><span></span></a></li>
+                        <li class="road-d f"><a href="#"></a>
+                        东极岛三日游后                
+                        </li>
+                        <li class="road-d g"><a href="#" class="ghos"><span></span></a></li>
+                    </ul>
+                </div>
+                <div class="more">
+                    <a href="">MORE</a>
+                    
+                </div>
+             
+         </div>
+     </div>
+     <div class="cust">
+         <div class="cust-c">
+             <ul class="cust-text">
+                 <li><a href="#" class="cust-d cust-top">定制团体游</a></li>
+                 <li class="cust-l">独立成团    专属定制</li>
+                 <li class="cust-j">简单几步，定制您的私人旅行</li>
+                 <li class="cust-g">-</li>
+                 <li class="cust-y">>>></li>
+             </ul>
+             <ul class="cust-text">
+                 <li><a href="#" class="cust-d">领队自由行</a></li>
+                 <li class="cust-l">金牌领队    专业跟拍</li>
+                 <li class="cust-j">解锁陌生，升级地道旅游体验</li>
+                 <li class="cust-g">-</li>
+                 
+             </ul>
+             
+         </div>
+
+     </div>
+     <div class="footer">
+         <div class="footer-c">
+         <div class="air"></div>
+            <div class="common-title">
+                    <div class="dott">
+                        <span></span>
+                    </div>
+                    <p class="cname">联系我们</p>
+                    <p class="ename">CONTACT</p>
+                </div>
+             <div class="connect">
+                 <ul class="connect-left">
+                     <li class="big">慢旅Slow Travle工作室 </li>
+                     <li>地点：中国河南省郑州市绿地新都汇</li>
+                     <li>邮编：1000000</li>
+                     <li>电话：0392-23656504</li>
+                     <li>邮箱：manlv@qq.com</li>
+                     <li class="photo">
+                         <a href="#" class="photo-1"></a>
+                         <a href="#" class="photo-2"></a>
+                         <a href="#" class="photo-3"></a>
+                     </li>
+                     <li class="bot">COPYRIGHT (©) 2018 mo004_2551 - 生活方式旅游类网站.</li>
+                 </ul>
+                <div class="sub">
+                    <div class="input-item">
+                        <span class="icon icon-name">姓名</span>
+                        <input type="text" class="name" />
+                    </div>
+                    <div class="input-item">
+                        <span class="icon icon-mail">邮箱</span>
+                        <input type="text" class="mail" />
+                    </div>
+                    <div class="input-item">
+                        <span class="icon icon-cal">电话</span>
+                        <input type="text" class="cal" />
+                    </div>
+                    <div class="input-item input-con">
+                        <span class="icon icon-con">内容</span>
+                        <input type="text" class="con" />
+                    </div>
+                    <a href="#" class="btn">提交</a>
+                    </div>
+             </div>
+         </div>
+     </div>
+    </body>
+</html>

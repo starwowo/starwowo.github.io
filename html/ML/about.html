@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        *{
+            padding:0;
+            margin:0;
+
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        body{
+            background-color: #fbfdfd;
+        }
+        .header{
+            height:76px;
+            width:100%;
+            background-color: #fdfcfc;
+        }
+        .header .header-c{
+            position:relative;
+            height:100%;
+            width:1200px;
+            margin:0 auto;
+            overflow:hidden;
+        }
+        .header .header-c .logo{
+            display:block;
+            float:left;
+            width:48px;
+            height:48px;
+            margin:15px 0 ;
+            background:#fff url(img/logo.jpg) no-repeat center;
+        }
+        .header .header-c .logo-text{
+            display:block;
+            float:left;
+            font-size: 30px;
+            font-weight: bold;
+            color:#666666;
+            margin:17px 0 ;
+        }
+        .header .header-c .nav{
+            position:absolute;
+            top:30px;
+            right:0px;
+            height:100%;
+        }
+        .header .header-c .nav li{
+            float:left;
+            height:100%;
+            width:80px;
+            margin-left: 24px;
+        }
+        .header .header-c .nav li a{
+            display:block;
+            height:25px;
+            text-align: center;
+            margin-top: 4px;
+            color:#818181;
+        }
+        .header .header-c .nav li:hover a{
+            border-bottom: 2px solid #50e3f1;
+            color:#50e3f1;
+        }
+       /* .header .header-c .nav .we{
+            display:block;
+            border-bottom: 2px solid #50e3f1;
+            color:#50e3f1;
+        }*/
+        .common-title{
+            position:relative;
+            width:100%;
+            height:48px;
+        }
+        .common-title .dott{
+            display:block;
+            position:absolute;
+            top:10px;
+            left:-25px;
+            background-color: #04e4f8;
+            width:50px;
+            height:16px;
+        }
+        .common-title .cname{
+            position:absolute;
+            top:0px;
+            font-size: 18px;
+            font-weight: bold;
+            color:#3b3b3b;
+
+        }
+        .common-title .ename{
+            position:absolute;
+            top:24px;
+            font-size: 14px;
+            color:#3b3b3b;
+
+        }
+        .air{
+            height:98px;
+            width:100%;
+        }
+        .about{
+            height:628px;
+            width:100%;
+            background-color: #fbfdfd;
+        }
+        .about .about-c{
+            height:100%;
+            width:1200px;
+            margin:0 auto;
+        }
+        .about .about-c .con{
+            position:relative;
+            height:430px;
+            width:1200px;
+            margin-top: 48px;
+        }
+        .about .about-c .con img{
+            float:left;
+            display:block;
+            height:430px;
+            width:430px;
+        }
+        .about .about-c .con .con-left{
+            position:absolute;
+            top:0;
+            right:0;
+            width:642px;
+            height:430px;
+        }
+        .about .about-c .con .con-left .con-r{
+            margin-bottom: 144px;
+            position:relative;
+        }
+         .about .about-c .con .con-left .pro-1{
+            font-size: 20px;
+            font-weight:bold;
+            color:#5a5959;
+        }
+        .about .about-c .con .con-left .pro-2{
+            font-size: 13px;
+            
+            color:#5a5959;
+        }
+
+        .about .about-c .con .con-left .pro-3{
+            position:absolute;
+            top:0;
+            right:0;
+            height:40px;
+            width:500px;
+            border-left:2px solid #5a5959;
+            color:#5a5959;
+            padding-left: 33px;
+        }
+        .about .about-c .con .con-left .pro-3.pro-4{
+            height:60px;
+
+        }
+        .footer{
+            height:500px;
+            background-color: #f2f2f2;
+        }
+        .footer .footer-c{
+            width:1200px;
+            height:100%;
+            margin:0 auto;
+
+
+        }
+        .footer .footer-c .connect{
+            position:relative;
+            height:400px;
+            margin-top: 100px;
+            padding-top: 54px;
+
+        }
+        .footer .footer-c .connect .connect-left{
+           position:relative;
+            width:420px;
+            height:400px;
+        }
+        .footer .footer-c .connect .connect-left li{
+            font-size: 15px;
+            color:#5d5d5d;
+            line-height: 35px;
+        }
+        .footer .footer-c .connect .connect-left .big{
+            font-size: 20px;
+            color:#5d5d5d;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .footer .footer-c .connect .connect-left .photo{
+            height:20px;
+            width:100%;
+            overflow:hidden;
+        }
+        .footer .footer-c .connect .connect-left .photo a{
+            display:block;
+            float:left;
+            height:20px;
+            width:20px;
+            background-color: #f2f2f2;
+            margin-right: 20px;
+
+
+
+
+
+        }
+        .footer .photo .photo-1{
+            background:#f2f2f2 url(img/qq.png) no-repeat center;
+        }
+        .footer .photo .photo-2{
+            background:#f2f2f2 url(img/wx.png) no-repeat center;
+        }
+        .footer .photo .photo-3{
+            width:27px;
+            background:#f2f2f2 url(img/wb.png) no-repeat center;
+        }
+        .footer .photo .bot{
+            position:absolute;
+            bottom:0;
+            left:0;
+        }
+        .footer .footer-c .connect .sub{
+            position:absolute;
+            top:0;
+            right:0;
+            width:600px;
+            height:380px;
+            padding-top: 54px;
+        }
+        .footer .footer-c .connect .sub .input-item{
+            position:relative;
+            width:140px;
+            height:70px;
+            float:left;
+            margin-top: 30px;
+            margin-right: 30px;
+            border-bottom: 1px solid #b9bcbc;
+        }
+        .footer .footer-c .connect .sub .input-item span{
+            font-size: 17px;
+            color: #b9bcbc;
+        }
+        .footer .footer-c .connect .sub .input-item input{
+                position:absolute;
+                bottom:0;
+                left:0;
+                width:100px;
+                height:30px;
+                text-indent: 20px;
+                border:none;
+                outline:none;
+                background-color: #f2f2f2;
+            }
+            .footer .footer-c .connect .sub .input-item.input-con{
+                height:70px;
+                width:480px;
+            }
+            .footer .input-con .con{
+                width:480px;
+                height:30px;
+            }
+            .footer .footer-c .connect .sub .btn{
+                display:block;
+                position: absolute;
+                top:264px;
+                left:0;
+                width:60px;
+                height:24px;
+                background-color: #474646;
+                color:#e0e0e0;
+                text-align: center;
+                font-size: 13px;
+                line-height: 24px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="header">
+         <!-- 版心 -->
+        <div class="header-c">
+        <a href="#" class="logo">      
+        </a>
+        <span class="logo-text">慢旅</span>
+        <ul class="nav">
+            <li class=""><a href="#">首页</a></li>
+            <li class=""><a href="#">特别策划</a></li>
+            <li class=""><a href="#">精品路线</a></li>
+            <li class=""><a href="#" class="we">关于我们</a></li>
+            <li class=""><a href="#">联系我们</a></li>
+        </ul>
+            
+        </div>
+    </div>
+    <!-- 内容 -->
+
+    <div class="about">
+        <div class="about-c">
+        <div class="air"></div>
+            <div class="common-title">
+                    <div class="dott">
+                        <span></span>
+                    </div>
+                    <p class="cname" >关于我们</p>
+                    <p class="ename" >ABOUT  US</p>
+            </div>
+            <div class="con">
+                <img src="img/we.png" height="430" width="430" alt="" />
+                <div class="con-left">
+                    <ul class="con-r">
+                        <li class="pro-1">介绍</li>
+                        <li class="pro-2">Introduce</li>
+                        <li class="pro-3">  新旅行概念社区，在这里，你可以收货来自世界各地的友谊，为您
+                        提供省心、省钱、纯玩、有趣的路线随时带您出发看世界。
+                        </li>
+                    </ul>
+                    <ul class="con-r">
+                        <li class="pro-1">理念</li>
+                        <li class="pro-2">Concept</li>
+                        <li class="pro-3">  
+                        每一寸土地都承载着一个城市厚重而亲切的灵魂。
+                        About travel, about life, That's all.
+                        </li>
+                    </ul>
+                    <ul class="con-r">
+                        <li class="pro-1">慢旅</li>
+                        <li class="pro-2">SL  TRAVLE</li>
+                        <li class="pro-3 pro-4">不关是你少年时代阅读格瓦拉的激情，还是垂暮之年海峡那边重  温青春的民谣；我们于历史，与人文，与自然中发掘最新的旅行主题，与你一起诠释生活中各个阶段的各种爱
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+            
+        </div>  
+     </div>
+     <div class="footer">
+         <div class="footer-c">
+
+             <div class="connect">
+                 <ul class="connect-left">
+                     <li class="big">慢旅Slow Travle工作室 </li>
+                     <li>地点：中国河南省郑州市绿地新都汇</li>
+                     <li>邮编：1000000</li>
+                     <li>电话：0392-23656504</li>
+                     <li>邮箱：manlv@qq.com</li>
+                     <li class="photo">
+                         <a href="#" class="photo-1"></a>
+                         <a href="#" class="photo-2"></a>
+                         <a href="#" class="photo-3"></a>
+                     </li>
+                     <li class="bot">COPYRIGHT (©) 2018 mo004_2551 - 生活方式旅游类网站.</li>
+                 </ul>
+                <div class="sub">
+                    <div class="input-item">
+                        <span class="icon icon-name">姓名</span>
+                        <input type="text" class="name" />
+                    </div>
+                    <div class="input-item">
+                        <span class="icon icon-mail">邮箱</span>
+                        <input type="text" class="mail" />
+                    </div>
+                    <div class="input-item">
+                        <span class="icon icon-cal">电话</span>
+                        <input type="text" class="cal" />
+                    </div>
+                    <div class="input-item input-con">
+                        <span class="icon icon-con">内容</span>
+                        <input type="text" class="con" />
+                    </div>
+                    <a href="#" class="btn">提交</a>
+                    </div>
+             </div>
+         </div>
+     </div>
+    </body>
+</html>

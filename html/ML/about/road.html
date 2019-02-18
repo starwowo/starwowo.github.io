@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+            .header{
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                height:77px;
+                background-color: #fdfcfc;
+                z-index:2;
+            }
+            .header .header-c{
+                position:relative;
+                width:1200px;
+                height:100%;
+                margin: 0 auto;
+            }
+            .header .header-c img{
+                width:106px;
+                height:45px;
+                margin-top: 16px;
+            }
+            .header .header-c ul{
+                position:absolute;
+                top:24px;
+                right:0px;
+                height:53px;
+            }
+            .header .header-c ul li{
+                float:left;
+                width:84px;
+                height:53px;
+                margin-left: 71px;
+            }
+            .header .header-c ul li a{
+                display:block;
+                width:75px;
+                height:32px;
+                line-height: 32px;
+                text-align: center;
+                color:#818181;
+                font-size: 14px;
+            }
+            .header .header-c ul li:hover a{
+                box-sizing: border-box;
+                border-bottom: 2px solid #04e4f8;
+                color:#04e4f8;
+            }
+            .header .header-c .sub-items{
+                margin-left: -4px;
+                width:84px;
+                height:65px;
+                background-color: rgba(0, 0, 0, 0.1);
+                display:none;
+            }
+            .header .header-c .road-item .sub-items .item-road{
+                display:block;
+                width:100%;
+                height:30px;
+                text-align: center;
+                color:#818181;
+                border-bottom: none;
+            }
+            .header .header-c .road-item:hover .sub-items{
+                display:block;
+            }
+            .header .header-c .road-item .sub-items .item-road.item-1:hover{
+                color:#04e4f8;
+            }
+            .header .header-c .road-item .sub-items .item-road.item-2:hover{
+                color:#04e4f8;
+            }
+            .container{
+                width:100%;
+                height:1285px;
+                background-color: #fbfdfd;
+                margin-top: 77px;
+            }
+            .container .container-c{
+                position:relative;
+                width:1200px;
+                height:100%;
+                margin:0 auto;
+            }
+            .container .container-c .line{
+                padding-top: 100px;
+                height:614px;
+                width:100%;
+                
+            }
+            .container .container-c .lists{
+                margin-bottom: 75px;
+                height:276px;
+                width:100%;
+
+            }
+            .container .container-c .lists li{
+                float:left;
+            }
+            .container .container-c .column{
+                display:block;
+                margin-top: 85px;
+                width:90px;
+                height:44px;
+                border:1px solid #c2c7cc;
+                font-size: 20px;
+                line-height: 44px;
+                color:#434545;
+                text-align: center;
+            }
+            .container .container-c .lists .column:hover{
+                background-color: #5ad0dc;
+                color:#fff;
+            }
+
+            .container .container-c .tab{
+                margin-left: 30px;
+                margin-right: 20px;
+                width:325px;
+                height:274px;
+                border-bottom: 1px solid #989999;
+            }
+            .container .container-c .tab .list{
+                display:block;
+                width:100%;
+                height:202px;
+                background:#fbfdfd url(img/592.png) no-repeat center;
+                background-size: cover;
+            }
+            .container .container-c .tab .list:hover .mask{
+                display:block;
+                position:relative;
+                width:100%;
+                height:202px;
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+            .container .container-c .tab .list span.mask:hover span{
+                display:block;
+                position:absolute;
+                top:33px;
+                left:35px;
+                width:250px;
+                height:132px;
+                border:1px solid #04e4f8;
+            }
+
+            .container .container-c .tab .title{
+                font-size: 16px;
+                color:#434545;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+            .container .container-c .tab .title-1{
+                font-size: 13px;
+                color:#434545;
+            }
+            .container .container-c .tab.tab-1{
+                margin-left: 30px;
+                margin-right: 0;
+                width:325px;
+                height:274px;
+            }
+            .container .container-c .tab .list.list-1{
+                background-image:url(img/572.png);
+            }
+            .container .container-c .tab .list.list-2{
+                background-image:url(img/573.png);
+            }
+            .container .container-c .tab .list.list-3{
+                background-image:url(img/574.png);
+            }
+            .container .container-c .tab .list.list-4{
+                background-image:url(img/571.png);
+            }
+            .container .container-c .tab .list.list-5{
+                background-image:url(img/569.png);
+            }
+            .container .container-c .tab .list.list-6{
+                background-image:url(img/604.png);
+            }
+            .container .container-c .tab .list.list-7{
+                background-image:url(img/607.png);
+            }
+            .container .container-c .tab .list.list-8{
+                background-image:url(img/605.png);
+            }
+            .container .container-c .paging{
+                position:absolute;
+                bottom:98px;
+                left:514px;
+                height:44px;
+                /*width:100%;*/
+
+            }
+            .container .container-c .paging .pag{
+                height:100%;
+                width:100%;
+
+            }
+            .container .container-c .paging .pag li{
+                float:left;
+
+            }
+            .container .container-c .paging .pag li a{
+                display:block;
+                font-size: 16px;
+                color:#434545;
+                line-height: 44px;
+                margin-right: 8px;
+            }
+            .container .container-c .paging .pag li:hover a{
+                color:#6cebf9;
+            }
+            .container .container-c .paging .pag .more{
+                height:42px;
+                width:90px;
+                border:1px solid #c2c7cc;
+                text-align: center;
+                line-height: 42px;
+            }
+            .container .container-c .paging .pag .more:hover{
+                background-color: #6cebf9;
+                color:#fff;
+            }
+            .footer{
+                /*height:394px;*/
+                width:100%;
+                background-color: #f2f2f2;
+
+            }
+            .footer .footer-c{
+                position:relative;
+                height:100%;
+                width:1200px;
+                margin:0 auto;
+            }
+            .footer .footer-c .worker li{
+                color:#909090;
+                font-size: 14px;
+                margin-bottom: 22px;
+            }
+            .footer .footer-c .worker .slow{
+                padding-bottom: 54px;
+                padding-top: 60px;
+                color: #292828;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .footer .footer-c .worker .icons{
+                overflow:hidden;
+            }
+            .footer .footer-c .worker .icons a{
+                display:block;
+                float:left;
+                width:27px;
+                height:20px;
+                margin-right: 22px;
+            }
+            .footer .footer-c .worker .icons .icon-1{
+                background:#f2f2f2 url(img/qq.png) no-repeat center;
+            }
+            .footer .footer-c .worker .icons .icon-2{
+                background:#f2f2f2 url(img/wx.png) no-repeat center;
+            }
+            .footer .footer-c .worker .icons .icon-3{
+                background:#f2f2f2 url(img/wb.png) no-repeat center;
+            }
+            .footer .footer-c .fill{
+                position:absolute;
+                top:80px;
+                right:0;
+                width:549px;
+                height:243px;
+            }
+            .footer .footer-c .fill .input-item{
+                float:left;
+                margin-left: 50px;
+                width:133px;
+                height:68px;
+            }
+            .footer .footer-c .fill .username{
+                color:#716f6f;
+                text-indent: 3px;
+                font-size: 14px;
+                line-height: 20px;
+                margin-bottom: 27px;
+            }
+            .footer .footer-c .fill .input-username{
+                height:24px;
+                width:100%;
+                outline:none;
+                border:none;
+                border-bottom: 1px solid #716f6f;
+                background-color: #f2f2f2;
+            }
+            .footer .footer-c .fill .input-item.items{
+                margin-top: 46px;
+                margin-left: 50px;
+                width:100%;
+                height:68px;
+            }
+            .footer .footer-c .fill .username{
+                color:#716f6f;
+                text-indent: 3px;
+                font-size: 14px;
+                line-height: 20px;
+                margin-bottom: 27px;
+            }
+            .footer .footer-c .fill .input-username.names{
+                
+                width:500px;
+                outline:none;
+                border:none;
+                border-bottom: 1px solid #716f6f;
+                background-color: #f2f2f2;
+            }
+            .footer .footer-c .fill .sub{
+                display:block;
+                width:62px;
+                height:24px;
+                position:absolute;
+                bottom:0;
+                left:50px;
+                line-height: 24px;
+                text-align: center;
+                background-color: #656565;
+                color: #b5b2b2;
+            }
+
+
+
+
+
+
+
+        </style>
+    </head>
+    <body>
+    <div class="header">
+        <div class="header-c">
+        <img src="img/logo-ml.png"  alt="" />
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li class="road-item">
+            <a href="#">特别策划</a>
+            <div class="sub-items">
+                <a href="#" class="item-road item-1">定制团体行</a>
+                <a href="#" class="item-road item-2">领队自由行</a>
+            </div>
+            </li>
+            <li><a href="#">精品路线</a></li>
+            <li><a href="#">关于我们</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+            
+        </div>
+    </div>
+    <div class="container">
+        <div class="container-c">
+            <div class="line">
+                <ul class="lists">
+                    <li><a href="#" class="column">境外游</a></li>
+                    <li>
+                        <div class="tab">
+                            <a href="#" class="list">
+                                <span class="mask">
+                                    <span></span>
+                                </span>
+                            </a>
+                            <p class="title">京都岚山深度 一日游</p>
+                            <p class="title-1">寻找我们的风花雪月</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tab">
+                            <a href="#" class="list list-1">
+                                <span class="mask">
+                                    <span></span>
+                                </span>
+                            </a>
+                            <p class="title">东极岛 三日游</p>
+                            <p class="title-1">后青春时代的海岛记忆</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tab tab-1">
+                            <a href="#" class="list list-2">
+                                 <span class="mask">
+                                    <span></span>
+                                </span>
+                            </a>
+                            <p class="title">圣托里尼  两日游</p>
+                            <p class="title-1">爱琴海最璀璨的一颗明珠</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="lists">
+                    <li><a href="#" class="column">国内游</a></li>
+                    <li>
+                        <div class="tab">
+                            <a href="#" class="list list-3">
+                                 <span class="mask">
+                                    <span></span>
+                                </span>
+                            </a>
+                            <p class="title">西北环线自驾游</p>
+                            <p class="title-1">圆一场关于北方的梦</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tab">
+                            <a href="#" class="list list-4">
+                                 <span class="mask">
+                                    <span></span>
+                                </span>
+                            </a>
+                            <p class="title">雪国之旅</p>
+                            <p class="title-1">打开窗听雪落下的声音</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tab tab-1">
+                            <a href="#" class="list list-5">
+                                 <span class="mask">
+                                    <span></span>
+                                </span>
+                            </a>
+                            <p class="title">东方夏威夷</p>
+                            <p class="title-1">请到天涯海角来这里四季春常在</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="lists">
+                    <li><a href="#" class="column">省内游</a></li>
+                    <li>
+                        <div class="tab">
+                            <a href="#" class="list list-6">
+                                 <span class="mask">
+                                    <span></span>
+                                </span>
+                            </a>
+                            <p class="title">神奇的梦幻乐园</p>
+                            <p class="title-1">这是一场盛大的欢乐盛宴</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tab">
+                            <a href="#" class="list list-7">
+                                 <span class="mask">
+                                    <span></span>
+                                </span>
+                            </a>
+                            <p class="title">银练挂天</p>
+                            <p class="title-1">银丝飘动 珍珠串滑 置身其境 心旷神怡</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tab tab-1">
+                            <a href="#" class="list list-8">
+                                 <span class="mask">
+                                    <span></span>
+                                </span>
+                            </a>
+                            <p class="title">十三朝古都</p>
+                            <p class="title-1">中国牡丹花都</p>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+            <div class="paging">
+                <ul class="pag">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#" class="more">MORE</a></li>
+                </ul>
+                
+            </div>
+
+            
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-c">
+            <ul class="worker">
+                <li class="slow">慢旅Slow Travle工作室</li>
+                <li>地点：中国河南省郑州市绿地新都汇</li>
+                <li>邮编：1000000</li>
+                <li>电话：0392-23656504</li>
+                <li>邮箱：manlv@qq.com</li>
+                <li class="icon">
+                    <div class="icons">
+                        <a href="#" class="icon-1"></a>
+                        <a href="#" class="icon-2"></a>
+                        <a href="#" class="icon-3"></a>
+                    </div>
+                </li>
+                <li>COPYRIGHT (©) 2018 mo004_2551 - 生活方式旅游类网站.</li>
+                
+            </ul>
+            <div class="fill">
+                <div class="input-item">
+                    <p class="username">姓名</p>
+                    <input type="text" class="input-username">
+                </div>
+                <div class="input-item">
+                    <p class="username">邮箱</p>
+                    <input type="text" class="input-username">
+                </div>
+                <div class="input-item">
+                    <p class="username">电话</p>
+                    <input type="text" class="input-username">
+                </div>
+                <div class="input-item items">
+                    <p class="username">内容</p>
+                    <input type="text" class="input-username names">
+                </div>
+                <a href="#" class="sub">提交</a>
+            </div>
+            
+        </div>
+    </div>
+
+    </body>
+</html>
