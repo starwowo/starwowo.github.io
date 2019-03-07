@@ -92,7 +92,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jquery"><span class="toc-text">jquery</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jquery"><span class="toc-text">jquery</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Jq对象如何转换为DOM对象。"><span class="toc-text">Jq对象如何转换为DOM对象。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dom对象转换为Jq对象，可以使用-方式直接转换。"><span class="toc-text">dom对象转换为Jq对象，可以使用$()方式直接转换。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#层级选择器"><span class="toc-text">层级选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的筛选选择器"><span class="toc-text">常用的筛选选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jq属性与样式"><span class="toc-text">jq属性与样式</span></a></li></ol></li></ol></li></ol>
     </div>
   </div>
 
@@ -102,7 +102,44 @@
 <li><a href="/MD/js-01.html">点我</a><h1 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h1></li>
 <li>Javascipt跟jQuery的区别：</li>
 <li>Javascript是一门编程语言，我们用它来编写客户端浏览器脚本。</li>
-<li>jQuery是javascript的一个库，包含多个可重用的函数，用来辅助我们简化javascript开发</li>
+<li>jQuery是javascript的一个库，包含多个可重用的函数，用来辅助我们简化javascript开发<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2></li>
+<li><code>$(&#39;#btn&#39;)//以$开头的就代表jq。选择了一个id为btn的节点，此为JQ对象.</code><h3 id="Jq对象如何转换为DOM对象。"><a href="#Jq对象如何转换为DOM对象。" class="headerlink" title="Jq对象如何转换为DOM对象。"></a>Jq对象如何转换为DOM对象。</h3></li>
+<li><code>var spanEl = $(&#39;span&#39;)[0] //这样把JQ对象转换为DOM对象。</code><h3 id="dom对象转换为Jq对象，可以使用-方式直接转换。"><a href="#dom对象转换为Jq对象，可以使用-方式直接转换。" class="headerlink" title="dom对象转换为Jq对象，可以使用$()方式直接转换。"></a>dom对象转换为Jq对象，可以使用$()方式直接转换。</h3></li>
+<li><code>var d1E = document.getElementsByClassName(&#39;d1&#39;)[0];</code></li>
+<li><code>$(d1E).css(&#39;color&#39;,&#39;red&#39;)</code><h3 id="层级选择器"><a href="#层级选择器" class="headerlink" title="层级选择器"></a>层级选择器</h3></li>
+<li><code>$(&#39;div&gt;.xxx&#39;)//直接子类选择器。</code></li>
+<li><code>$(&#39;div span&#39;)//子类选择器。</code></li>
+<li><code>$(&#39;div~div&#39;)//div后面的所有兄弟节点</code></li>
+<li><code>$(&#39;div~div&#39;)//div后面的所有兄弟节点</code><h3 id="常用的筛选选择器"><a href="#常用的筛选选择器" class="headerlink" title="常用的筛选选择器"></a>常用的筛选选择器</h3></li>
+<li>选择第一个<code>$(&#39;div:first&#39;)</code></li>
+<li>选择最后一个<code>$(&#39;div:last&#39;)</code></li>
+<li>选择某一个<code>$(&#39;div:eq(index)&#39;)</code></li>
+<li>选择偶数的元素<code>$(&#39;div:even&#39;)</code>从0算</li>
+<li>选择奇数的元素<code>$(&#39;div:odd&#39;)</code>从0算</li>
+<li>取反<code>$(&#39;div:not(:odd)&#39;)</code></li>
+</ul>
+<h3 id="jq属性与样式"><a href="#jq属性与样式" class="headerlink" title="jq属性与样式"></a>jq属性与样式</h3><ul>
+<li>获取css<code>$(&#39;.d1&#39;).css(&#39;background-color&#39;);$(&#39;.d1&#39;).css([&#39;color&#39;,&#39;size&#39;])</code></li>
+<li>设置CSS<code>$(&#39;div&#39;).css(&#39;color&#39;,&#39;red&#39;)</code></li>
+<li>获取属性的值<code>$(input).attr(&#39;value&#39;)</code></li>
+<li>设置属性的值<code>$(input).attr(&#39;value&#39;,&#39;xxx&#39;)</code></li>
+<li>你甚至都能在后面写一个函数<ul>
+<li><code>$(&#39;input&#39;).attr(&#39;value&#39;,function(){ return &#39;xxx&#39;})</code></li>
+</ul>
+</li>
+<li><p>设置多个属性的值</p>
+<ul>
+<li><code>$(&#39;input&#39;).attr({type:&#39;number&#39;, value:&#39;23333&#39;})</code></li>
+</ul>
+</li>
+<li><p>有删除就有移除，移除某一个属性removeAttr()</p>
+<ul>
+<li><code>$(&#39;input&#39;).removeAttr(&#39;value&#39;)</code></li>
+</ul>
+</li>
+<li>添加类名<code>$(div).addClass(&#39;new&#39;)</code></li>
+<li>删除类名<code>$(div).removeClass(&#39;new&#39;)</code></li>
+<li>检测类名<code>$(&#39;.box&#39;).hasClass(&#39;box&#39;)</code></li>
 </ul>
 
   </div>
