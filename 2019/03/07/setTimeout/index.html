@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#34495e">
-  <title>star | Hexo</title>
+  <title>setTimeout | Hexo</title>
   <link rel="alternate" href="path/of/rss" type="application/atom+xml">
   <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
@@ -59,7 +59,7 @@
     <div class="banner-title">
       
         <div class="post-title">
-          star
+          setTimeout
             <div class="post-tags">
     		    
     	      </div>
@@ -75,13 +75,13 @@
 
   <header>
     <div class="post-title mobile-post-title">
-      <h1>star</h1>
+      <h1>setTimeout</h1>
         <div class="post-tags">
         
         </div>
     </div>
     <div class="post-meta">
-      <span class="post-time"><i class="iconfont icon-calendar"></i>2019-02-25</span>
+      <span class="post-time"><i class="iconfont icon-calendar"></i>2019-03-07</span>
       
       <!----------------------------------->
         
@@ -92,18 +92,15 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jquery"><span class="toc-text">jquery</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#延时器的妙用"><span class="toc-text">延时器的妙用</span></a></li></ol>
     </div>
   </div>
 
 
   <div class="post-content">
-    <ul>
-<li><a href="/MD/js-01.html">点我</a><h1 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h1></li>
-<li>Javascipt跟jQuery的区别：</li>
-<li>Javascript是一门编程语言，我们用它来编写客户端浏览器脚本。</li>
-<li>jQuery是javascript的一个库，包含多个可重用的函数，用来辅助我们简化javascript开发</li>
-</ul>
+    <h1 id="延时器的妙用"><a href="#延时器的妙用" class="headerlink" title="延时器的妙用"></a>延时器的妙用</h1><p>标签（空格分隔）： 代码部分</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var timer = null;</span><br><span class="line">    $(&apos;.li-item&apos;).mouseenter(function()&#123;</span><br><span class="line">        var newThis = $(this);</span><br><span class="line">        //下面的延时器不能得到当前的li，因此我们要先把它存起来</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        timer = setTimeout(function()&#123;</span><br><span class="line">        //启用延时器的原因我们鼠标从进入box到确定要看哪一个需要时间，不能把鼠标扫过的li都执行一遍，所以我们才要kai</span><br><span class="line">            // $(this).siblings().stop(true,true);</span><br><span class="line">            console.log(222222)</span><br><span class="line">            newThis.animate(&#123;</span><br><span class="line">                width: &apos;600px&apos;</span><br><span class="line">            &#125;);</span><br><span class="line">            newThis.siblings().animate(&#123;</span><br><span class="line">                width: &apos;100px&apos;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;,1000);</span><br><span class="line">    &#125;);</span><br><span class="line">        //此处应该不是li标签了，因为每次你移动到其他li标签，他最终还是li标签呀，所以应该是当ul父类获取不到鼠标的时候才执行时间</span><br><span class="line">    $(&apos;.box&apos;).mouseleave(function()&#123;</span><br><span class="line">        console.log(&apos;-------------&apos;)</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">       //这里还要把鼠标移出box时未完成的延时器清除掉</span><br><span class="line">        $(&apos;.li-item&apos;).animate(&#123;</span><br><span class="line">            width: &apos;200px&apos;</span><br><span class="line">        &#125;);</span><br><span class="line">            </span><br><span class="line">    &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
   </div>
   <div class="post-footer">the end</div>
@@ -112,12 +109,8 @@
           
   <nav class="pagination post-nav">
     
-      <a href="/2019/03/07/setTimeout/">
-        <span class="prev-post"><i class="iconfont icon-back"></i>setTimeout</span>
-      </a>
     
-    
-      <a href="/2019/02/18/star/">
+      <a href="/2019/02/25/star-1/">
         <span class="next-post">star<i class="iconfont icon-more"></i></span>
       </a>
     
